@@ -20,6 +20,7 @@ public class SendEmailUsingGMailSMTP {
 
 	// -- You must have a valid gmail username/password pair to use
 	// gmail as a SMTP service
+    // changed password...
 	final static private String gmailusername = "guacamole.chipolte@gmail.com";
 	final static private String gmailpassword = "PdTG9NwtZHn4U7N";
 	
