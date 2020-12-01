@@ -1,7 +1,5 @@
 package network;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -53,10 +51,10 @@ public class ServerGUI extends JFrame{
 				prepareButtonHandlers();
 
 				// -- add buttons and text field to panel layout manager
-				setLayout(new GridLayout(20, 1, 1, 1));
+				setLayout(new FlowLayout());
 
 				this.add(queryButton);
-				this.add(readout);
+//				this.add(readout);
 			}
 			
 			private void prepareButtonHandlers()
@@ -65,9 +63,6 @@ public class ServerGUI extends JFrame{
 				queryButton.addActionListener(
 					new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
-
-//							readout.setText();
-
 							System.out.println("pressed.");
 						}
 					}

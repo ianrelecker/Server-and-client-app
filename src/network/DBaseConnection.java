@@ -210,6 +210,43 @@ public class DBaseConnection {
 			return isLoggedIn;
 	     }
 	}
+
+	public String getEmail(String uname) {
+		String email = "";
+		try {
+		//		 -- select a specific username
+				 String sqlcmd = "SELECT * FROM users WHERE username = '" + uname + "'";
+				 rset = stmt.executeQuery(sqlcmd);
+		//		 -- loop through the ResultSet one row at a time
+		//		    Note that the ResultSet starts at index 1
+				while (rset.next()) {
+					email = rset.getString(3);
+				}
+				return email;
+
+			} catch (SQLException ex) {
+				System.out.println("SQLException: " + ex.getMessage()); return null;
+			}
+		}
+
+		public String getLoggedIn(){
+		StringBuilder email= new StringBuilder();
+
+		try{
+			String sqlcmd = "SELECT * FROM users WHERE loggedinstatus = 1";
+			rset = stmt.executeQuery(sqlcmd);
+
+			while (rset.next()) {
+				email.append(rset.getString(1));
+			}
+			return email.toString();
+
+		}catch (SQLException ex){
+			System.out.println("SQLException: " + ex.getMessage()); return null;
+		}
+		}
+
+
 //            /*
 //             * EVERYTHING THAT FOLLOWS IS DEPENDENT ON THE TABLES AND COLUMNS
 //             * THAT YOU CREATED WITHIN YOUR SCHEMA. YOU MUST MODIFY THIS CODE

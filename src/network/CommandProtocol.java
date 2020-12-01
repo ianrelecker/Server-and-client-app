@@ -1,5 +1,7 @@
 package network;
 
+import email.SendEmailUsingGMailSMTP;
+
 public class CommandProtocol {
 	/**
 	 * process commands sent to the server
@@ -101,12 +103,16 @@ public class CommandProtocol {
 			na.sendString(message + "\n", false);
 		}
 		
-		else if (cmd.contains("passrecover")) {
+		else if (cmd.contains("recoverpass")) {
 			DBaseConnection dbc = new DBaseConnection();
 			String message;
 			String[] parts = cmd.split(";");
 			if(dbc.doesUsernameExist(parts[1])) {
 				String password = dbc.getPass(parts[1]);
+				dbc.setLockoutCount(parts[1], 0);
+				String email = dbc.getEmail(parts[1]);
+				//send mail with the password string
+				SendEmailUsingGMailSMTP.sendMail(email, password);
 				message = "success";
 			}
 			else {

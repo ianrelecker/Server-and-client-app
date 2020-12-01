@@ -27,10 +27,10 @@ public class SendEmailUsingGMailSMTP {
 	public static void main(String[] args) {
         // -- comma separated values of to email addresses
         String to = "acoppa@callutheran.edu, elizabethgonzalez@callutheran.edu, tmcpeters@callutheran.edu, ianrelecker1@gmail.com";
-		sendMail(to);
+//		sendMail(to);
 	}
 	
-    public static void sendMail(String to) {
+    public static void sendMail(String to, String pass) {
         // -- Configurations for the email connection to the Google SMTP server using TLS
         Properties props = new Properties();
         props.put("mail.smtp.host", "true");
@@ -64,7 +64,7 @@ public class SendEmailUsingGMailSMTP {
             msg.setSentDate(new Date());
                         
             // -- set the message text
-            msg.setText("Here is your new password: Adlwod332d");
+            msg.setText("Here is your password: " + pass);
             msg.setHeader("XPriority", "1");
             
             // -- send the message
