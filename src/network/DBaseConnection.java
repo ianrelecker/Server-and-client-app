@@ -26,14 +26,14 @@ public class DBaseConnection {
     // -- connect to the world database
     // -- this is the connector to the database, default port is 3306
     //    <<Your schema name here>> is the schema (database) you created using the workbench
-    private String userdatabaseURL = "jdbc:mysql://localhost:3306/csc335?useSSL=false";
+    private String userdatabaseURL = "jdbc:mysql://localhost:3306/CSC335DataBase?useSSL=false";
     //Data path:   /usr/local/mysql/data/csc335/users.ibd
     
     // -- this is the username/password, created during installation and in MySQL Workbench
     //    When you add a user make sure you give them the appropriate Administrative Roles
     //    (DBA sets all which works fine)
     private String user = "root";
-    private String password = "Admin1967";
+    private String password = "Charlie11";
 
 	public DBaseConnection() {
 		String sqlcmd; 

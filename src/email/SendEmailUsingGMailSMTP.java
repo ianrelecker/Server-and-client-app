@@ -22,7 +22,7 @@ public class SendEmailUsingGMailSMTP {
 	// gmail as a SMTP service
     // changed password...
 	final static private String gmailusername = "guacamole.chipolte@gmail.com";
-	final static private String gmailpassword = "PdTG9NwtZHn4U7N";
+	final static private String gmailpassword = "hthCXquw366szN9";
 	
 	public static void main(String[] args) {
         // -- comma separated values of to email addresses

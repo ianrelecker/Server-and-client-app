@@ -4,9 +4,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class ServerGUI extends JFrame{
 
@@ -47,6 +45,7 @@ public class ServerGUI extends JFrame{
 		public class ControlPanel extends JPanel {
 
 			private JButton queryButton;
+			private JTextArea readout;
 			
 			public ControlPanel ()
 			{
@@ -57,6 +56,7 @@ public class ServerGUI extends JFrame{
 				setLayout(new GridLayout(20, 1, 1, 1));
 
 				this.add(queryButton);
+				this.add(readout);
 			}
 			
 			private void prepareButtonHandlers()
@@ -65,6 +65,9 @@ public class ServerGUI extends JFrame{
 				queryButton.addActionListener(
 					new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
+
+//							readout.setText();
+
 							System.out.println("pressed.");
 						}
 					}
