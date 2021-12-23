@@ -1,3 +1,3 @@
 # CSC-335-Codebase
 
-All of the required libraries that need to be added for the server to work are in the folder called "required-libraries".
+A server and client program that allows the users to log in to their accounts and send password reset emails using Java
